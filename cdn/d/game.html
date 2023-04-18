@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Screen Iframe</title>
+	<script src="load.js"></script>
+	<link rel="stylesheet" type="text/css" href="load.css">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		iframe {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			z-index: 9999;
+		}
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 9998;
+}
+
+.bar {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+    background-color: #ffffff; /* Change this to the color you want */
+}
+	</style>
+</head>
+<body>
+	<div class="progress">
+		<div class="bar"></div>
+	</div>
+	<div class="loader">
+		<img src="/img/favicon.png" alt="Loading...">
+	</div>
+	<iframe src="https://mugitz.com/"></iframe>
+</body>
+</html>
