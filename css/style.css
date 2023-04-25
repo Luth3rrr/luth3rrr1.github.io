@@ -334,7 +334,9 @@ input:focus {
   top: 0;
   z-index: 6969;
 }
-
+.teacher{
+margin-left: 20px;
+}
 #frameCloser {
   color: white;
   top: 15px;
