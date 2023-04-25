@@ -318,7 +318,32 @@ input:focus {
   bottom: 20px;
   left: 6px;
 }
+#teacher{
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+}
+.teacher{
+    color: black;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border: 2px solid #0f0f0f;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0px 5px 10px 0px #2e2e2e;
+}
+.teacher:hover{
+   background-color: #2e2e2e;
 
+}
+.teacher:active {
+  background-color: #2e2e2e;
+  color: black;
+}
 #closeButton {
   position: absolute;
   right: 15px;
@@ -334,9 +359,7 @@ input:focus {
   top: 0;
   z-index: 6969;
 }
-.teacher{
-margin-left: 20px;
-}
+
 #frameCloser {
   color: white;
   top: 15px;
