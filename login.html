@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Login Page</title>
+</head>
+<body>
+  <style>
+      body {
+         background-color: #f9c5d1;
+      }
+      h1 {
+         color: #000;
+         text-align: center;
+         font-size: 36px;
+         margin-top: 50px;
+      }
+      button {
+         display: block;
+         margin: 0 auto;
+         padding: 10px 20px;
+         background-color: #000;
+         color: #fff;
+         border: none;
+         border-radius: 5px;
+         font-size: 18px;
+         cursor: pointer;
+         transition: all 0.3s ease-in-out;
+      }
+      button:hover {
+         background-color: #f9c5d1;
+         color: #000;
+         transform: scale(1.1);
+      }
+    img{
+      width: 14px;
+      height: 14px;
+    }
+   </style>
+   <h1>התחבר בבקשה</h1>
+<button id="loginBtn">
+   <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
+  <span>התחבר באמצעות גוגל</span>
+</button>
+
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+   <script src="firebase-config.js"></script>
+</body>
+</html>
