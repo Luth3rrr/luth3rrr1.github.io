@@ -1,4 +1,4 @@
-const DEFAULT_URL = "https://my.classoos.com/il/books/textbooks";
+const DEFAULT_URL = "https://classroom.google.com/u/0/";
 
 const goBtn = document.querySelector('.teacher');
 const changeBtn = document.getElementById('changeBtn');
