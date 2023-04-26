@@ -21,10 +21,7 @@ if (!url) {
 goBtn.addEventListener('click', function() {
   const url = localStorage.getItem('savedUrl');
   if (url) {
-    const newWindow = window.open(url, '_blank', 'width='+window.innerWidth+',height='+window.innerHeight+',fullscreen=yes,scrollbars=yes');
-    if (newWindow) {
-      newWindow.focus();
-    }
+    window.open(url, '_blank');
   }
 });
 
