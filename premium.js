@@ -12,7 +12,7 @@
     measurementId: "G-EKNPGEND7B"
   };
 
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 // Get current user ID
 var userId = firebase.auth().currentUser.uid;
