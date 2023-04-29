@@ -39,16 +39,53 @@
       height: 14px;
     }
    </style>
-   <h1>התחבר בבקשה</h1>
-<button id="loginBtn">
-   <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
-  <span>התחבר באמצעות גוגל</span>
-</button>
+   <h1>Log in please</h1>
+   <button id="loginBtn">
+       <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
+      <span>Sign in with Google</span>
+   </button>
 
    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
    <script src="firebase-config.js"></script>
+   <script>
+      const loginBtn = document.getElementById('loginBtn');
+      const database = firebase.database();
+      const accessCodesRef = database.ref('accessCodes');
+
+      loginBtn.addEventListener('click', function() {
+         const provider = new firebase.auth.GoogleAuthProvider();
+         firebase.auth().signInWithPopup(provider)
+            .then(function(result) {
+               const user = result.user;
+               const uid = user.uid;
+
+               // Check if the user has a valid access code
+               accessCodesRef.child(uid).once('value')
+                  .then(function(snapshot) {
+                     const accessCodes = snapshot.val();
+
+                     if (accessCodes) {
+                        window.location.href = "index.html"; // redirect to main page
+                     } else {
+                        // User does not have a valid access code, display error message
+                        alert('Invalid access code');
+                        firebase.auth().signOut(); // Sign the user out
+                     }
+                  })
+                  .catch(function(error) {
+                     // Handle errors here
+                     console.log(error);
+                  });
+
+            })
+            .catch(function(error) {
+               // Handle errors here
+               console.log(error);
+            });
+      });
+   </script>
 </body>
 </html>
