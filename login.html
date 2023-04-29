@@ -49,6 +49,19 @@
    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
    <script src="premium.js"></script>
-
-</body>
-</html>
+   <script>
+      // Login button click event
+      const loginBtn = document.getElementById('loginBtn');
+      loginBtn.addEventListener('click', function() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider)
+          .then(function(result) {
+            // User signed in successfully
+          })
+          .catch(function(error) {
+            // Handle errors here
+            console.log(error);
+          });
+      });
+   </script>
+</
