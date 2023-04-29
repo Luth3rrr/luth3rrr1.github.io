@@ -14,19 +14,22 @@
 
 firebase.initializeApp(firebaseConfig);
 
-// Get current user ID
-var userId = firebase.auth().currentUser.uid;
+// Wait for the user to sign in
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    var userId = user.uid;
+    var accessCodeRef = firebase.database().ref('accessCode/' + userId);
 
-// Get a reference to the Firebase Realtime Database accessCode node
-var accessCodeRef = firebase.database().ref('accessCode/' + userId);
-
-// Check if the user has access to premium features
-accessCodeRef.once('value').then(function(snapshot) {
-  if (snapshot.exists() && snapshot.val() === true) {
-    // User has access to premium features, continue to the site
+    accessCodeRef.once('value').then(function(snapshot) {
+      if (snapshot.exists() && snapshot.val() === true) {
+        // User has access to premium features, continue to the site
+      } else {
+        // User does not have access to premium features, redirect to login.html
+        alert('Sorry, you do not have premium access.');
+        window.location.replace('login.html');
+      }
+    });
   } else {
-    // User does not have access to premium features, redirect to login.html
-    alert('Sorry, you do not have premium access.');
-    window.location.replace('login.html');
+    // User is not signed in, do something else
   }
 });
