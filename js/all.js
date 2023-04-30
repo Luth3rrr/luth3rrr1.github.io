@@ -41,19 +41,6 @@ function isValidUrl(url) {
   // Very basic URL validation
   return url.match(/^https?:\/\/.+$/);
 }
-window.onload = function() {
-  const logoutBtn = document.getElementById('logoutBtn');
-  logoutBtn.addEventListener('click', function() {
-    const confirmLogout = confirm("Are you sure you want to log out?");
-    if (confirmLogout) {
-      firebase.auth().signOut().then(function() {
-        // User is signed out.
-      }).catch(function(error) {
-        // Handle errors here.
-        console.log(error);
-      });
-    }
-  });
-};
+
 
 
