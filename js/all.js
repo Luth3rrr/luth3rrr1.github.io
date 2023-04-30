@@ -41,15 +41,15 @@ function isValidUrl(url) {
   // Very basic URL validation
   return url.match(/^https?:\/\/.+$/);
 }
-const logoutBtn = document.querySelector('li i.fa-right-from-bracket');
-
+// Log out button click event
+const logoutBtn = document.getElementById('logoutBtn');
 logoutBtn.addEventListener('click', function() {
-  const confirmLogout = confirm("Are you sure you want to log out?");
-  if (confirmLogout) {
+  // Show alert to confirm log out
+  if (confirm("Are you sure you want to log out?")) {
     firebase.auth().signOut()
       .then(function() {
         // User signed out successfully
-        window.location.href = "https://premium.mugitz.com/login.html";
+        window.location.href = "https://premium.mugitz.com/login.html"; // Redirect to login page
       })
       .catch(function(error) {
         // Handle errors here
@@ -57,3 +57,4 @@ logoutBtn.addEventListener('click', function() {
       });
   }
 });
+
