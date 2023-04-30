@@ -80,6 +80,7 @@ firebase.auth().onAuthStateChanged(function(user) {
           // User does not have a valid access code, redirect to login page
           if (window.location.pathname !== '/login.html') {
             window.location.href = "/login.html";
+            alert("אין לך פרימיום. אם זהוי טעות נא דבר עם המנכלים")
           }
         }
       })
