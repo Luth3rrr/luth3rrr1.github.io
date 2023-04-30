@@ -73,16 +73,16 @@ firebase.auth().onAuthStateChanged(function(user) {
       .then(function(snapshot) {
         const accessCodes = snapshot.val();
 
-        if (accessCodes) {
-          // User has a valid access code, redirect to premium.mugitz.com
-          window.location.href = "https://premium.mugitz.com";
-        } else {
-          // User does not have a valid access code, redirect to login page
-          if (window.location.pathname !== '/login.html') {
-            window.location.href = "/login.html";
-            alert("אין לך פרימיום. אם זהוי טעות נא דבר עם המנכלים")
-          }
-        }
+       if (accessCodes) {
+  // User has a valid access code, redirect to premium.mugitz.com
+  window.location.href = "https://premium.mugitz.com";
+} else {
+  // User does not have a valid access code, show alert message
+  alert("אין לך פרימיום. אם זהוי טעות נא דבר עם המנכלים");
+  if (window.location.pathname !== '/login.html') {
+    window.location.href = "/login.html";
+  }
+}
       })
       .catch(function(error) {
         // Handle errors here
