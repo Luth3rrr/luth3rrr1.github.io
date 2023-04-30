@@ -23,9 +23,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         const accessCodes = snapshot.val();
 
         if (accessCodes) {
-          // User has a valid access code, display welcome message
-          const userGreeting = document.getElementById('userGreeting');
-          userGreeting.textContent = `Welcome, ${user.displayName}!`;
+          // User has a valid access code, do nothing
         } else {
           // User does not have a valid access code, redirect to login page
           if (window.location.pathname !== '/login.html') {
@@ -44,4 +42,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   }
 });
-
+const user = result.user;
+    const userGreeting = document.getElementById('userGreeting');
+    userGreeting.textContent = `Hello, ${user.displayName}!`; // set the text content of the h1 element
+  })
+  .catch(function(error) {
+    // Handle errors here
+    console.log(error);
+  });
