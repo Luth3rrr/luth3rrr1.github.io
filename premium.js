@@ -42,3 +42,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   }
 });
+const user = result.user;
+    const userGreeting = document.getElementById('userGreeting');
+    userGreeting.textContent = `Hello, ${user.displayName}!`; // set the text content of the h1 element
+  })
+  .catch(function(error) {
+    // Handle errors here
+    console.log(error);
+  });
