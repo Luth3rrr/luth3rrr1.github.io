@@ -28,7 +28,7 @@ firebase.auth().onAuthStateChanged(function(user) {
           // User has a valid access code, do nothing
         } else {
           // User does not have a valid access code, redirect to login page
-          window.location.href = "login.html";
+          window.location.href = "https://premium.mugitz.com/login.html";
         }
       })
       .catch(function(error) {
@@ -36,10 +36,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log(error);
       });
   } else {
-    // User is not signed in, redirect to login page
-    window.location.href = "login.html";
+    // User is not signed in, do nothing
   }
 });
+
 
 // Login button click event
 const loginBtn = document.getElementById('loginBtn');
