@@ -43,6 +43,7 @@
             </button>
           </div>
         </li>
+                <li id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></li>
       </ul>
       <h1 class="logo">Mugi Premium</h1>
     </div>
@@ -96,4 +97,20 @@
     })
   </script>
       <script src="/premium.js"></script>
+  <script>
+window.onload = function() {
+  const logoutBtn = document.getElementById('logoutBtn');
+  logoutBtn.addEventListener('click', function() {
+    const confirmLogout = confirm("?אתה בטוח שהנך רוצה להתנתק מהחשבון");
+    if (confirmLogout) {
+      firebase.auth().signOut().then(function() {
+        // User is signed out.
+      }).catch(function(error) {
+        // Handle errors here.
+        console.log(error);
+      });
+    }
+  });
+};
+</script>
 </body>
