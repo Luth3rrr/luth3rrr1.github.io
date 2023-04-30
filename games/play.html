@@ -118,7 +118,7 @@ setInterval(checkIframeSrc, 100); // check every .1 seconds
 window.onload = function() {
   const logoutBtn = document.getElementById('logoutBtn');
   logoutBtn.addEventListener('click', function() {
-    const confirmLogout = confirm("?אתה בטוח שהנך רוצה להתנתק מהחשבון");
+    const confirmLogout = confirm("אתה בטוח שהנך רוצה להתנתק מהחשבון?");
     if (confirmLogout) {
       firebase.auth().signOut().then(function() {
         // User is signed out.
