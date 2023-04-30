@@ -28,17 +28,7 @@ thanks!
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-455KY5SYFH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-  
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-  
-    gtag('config', 'G-455KY5SYFH');
-  </script>
-  
+
   <body>
     <nav class="navbar">
       <div class="navbar-container container">
@@ -62,6 +52,7 @@ thanks!
           </div>
         </li>
         <li><a href="/settings"><i class="fa-solid fa-gear fa-lg"></i></a></li>
+         <li id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></li>
       </ul>
       <h1 class="logo">Mugi Premium</h1>
     </div>
@@ -807,5 +798,20 @@ thanks!
     })
 </script>
         <script src="/premium.js"></script>
-
+<script>
+window.onload = function() {
+  const logoutBtn = document.getElementById('logoutBtn');
+  logoutBtn.addEventListener('click', function() {
+    const confirmLogout = confirm("?אתה בטוח שהנך רוצה להתנתק מהחשבון");
+    if (confirmLogout) {
+      firebase.auth().signOut().then(function() {
+        // User is signed out.
+      }).catch(function(error) {
+        // Handle errors here.
+        console.log(error);
+      });
+    }
+  });
+};
+</script>
   </body>
