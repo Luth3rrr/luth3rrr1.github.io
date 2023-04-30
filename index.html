@@ -125,5 +125,21 @@
 </script>
       <script src="/premium.js"></script>
   </script>
+<script>
+window.onload = function() {
+  const logoutBtn = document.getElementById('logoutBtn');
+  logoutBtn.addEventListener('click', function() {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+      firebase.auth().signOut().then(function() {
+        // User is signed out.
+      }).catch(function(error) {
+        // Handle errors here.
+        console.log(error);
+      });
+    }
+  });
+};
+</script>
 
 </body>
