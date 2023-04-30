@@ -74,7 +74,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         const accessCodes = snapshot.val();
 
         if (accessCodes) {
-          // User has a valid access code, do nothing
+          // User has a valid access code, redirect to premium.mugitz.com
+          window.location.href = "https://premium.mugitz.com";
         } else {
           // User does not have a valid access code, redirect to login page
           if (window.location.pathname !== '/login.html') {
@@ -92,7 +93,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       window.location.href = "/login.html";
     }
   }
-}); // added closing curly brace here
+});
+
 // Login button click event
 const loginBtn = document.getElementById('loginBtn');
 loginBtn.addEventListener('click', function() {
