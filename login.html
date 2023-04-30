@@ -63,7 +63,7 @@ const firebaseConfig = {
 };
       firebase.initializeApp(firebaseConfig);
 
-    firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     const uid = user.uid;
     const accessCodesRef = firebase.database().ref('accessCodes/' + uid);
@@ -92,7 +92,7 @@ const firebaseConfig = {
       window.location.href = "/login.html";
     }
   }
-});
+}); // added closing curly brace here
 // Login button click event
 const loginBtn = document.getElementById('loginBtn');
 loginBtn.addEventListener('click', function() {
@@ -101,6 +101,11 @@ loginBtn.addEventListener('click', function() {
     .then(function(result) {
       // User signed in successfully
     })
+    .catch(function(error) {
+      // Handle errors here
+      console.log(error);
+    });
+});
       </script>
 </body>
 </html>
