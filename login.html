@@ -93,7 +93,14 @@ const firebaseConfig = {
     }
   }
 });
-
+// Login button click event
+const loginBtn = document.getElementById('loginBtn');
+loginBtn.addEventListener('click', function() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then(function(result) {
+      // User signed in successfully
+    })
       </script>
 </body>
 </html>
