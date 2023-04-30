@@ -25,10 +25,11 @@ firebase.auth().onAuthStateChanged(function(user) {
         const accessCodes = snapshot.val();
 
         if (accessCodes) {
-          // User has a valid access code, do nothing
+          // User has a valid access code, redirect to premium.mugitz.com
+          window.location.href = "https://premium.mugitz.com/login.html";
         } else {
           // User does not have a valid access code, redirect to login page
-          window.location.href = "https://premium.mugitz.com/login.html";
+          window.location.href = "login.html";
         }
       })
       .catch(function(error) {
@@ -36,10 +37,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log(error);
       });
   } else {
-    // User is not signed in, do nothing
+    // User is not signed in, redirect to login page
+    window.location.href = "login.html";
   }
 });
-
 
 // Login button click event
 const loginBtn = document.getElementById('loginBtn');
@@ -54,4 +55,3 @@ loginBtn.addEventListener('click', function() {
       console.log(error);
     });
 });
-//s
