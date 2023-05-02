@@ -22,6 +22,55 @@
   <link rel="icon" type="image/x-icon" href="/img/favicon.png">
   <meta name="description" content="Start Learning Math and other subjects today." />
   <meta name="keywords" content="proxy, mugi, games, unblock, half life, school, cheat, hack, no ads, ad-free, ad free, web proxy, ultraviolet, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, un block chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass iboss, bypass lightspeed filter, holy unblocker, chromebooks, titanium network, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked, discord unblocked, blooket hacks, Games, Unblocking, Fun, Entertaining, Addictive, Challenging, Strategy, Puzzle, Multiplayer, Casual, Arcade, Action, Adventure, RPG, Sports, Racing, Shooter, Fighting, Platformer, Simulation, Open-World, Horror, Fantasy, Science Fiction, Casual Games, Skill Games, Board Games, Word Games, Card Games, Escape Games, Hidden Object, Match-3, Physics-Based, Time Management, Tycoon, Life Simulator, City Builder, Party Games, Music Games, Dance Games, Educational Games, Kids Games, Browser Games, Online Games, Mobile Games, PC Games, Console Games, Virtual Reality, Augmented Reality, Cross-Platform, Free-to-Play, Paid Games, In-App Purchases, Microtransactions, Free Games, Online Multiplayer, Local, Multiplayer, Co-op, Competitive, Fast-Paced, Relaxing, unbloc, notbroken, gameing, gameapps, noads, no ads, addfree, gamez, schoool, shcool unblocked, sjchool, schoolworld, shcool, no ad, free gam, free gamez, edpuzzle, edpuzzle hack, shcool wifi bypass, online game, shellshocker, front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, roblox, roblox games, roblox unblocked, roblox free, roblox free online, roblox working, roblox chromebook, chromebook roblox working, unblocker, unblocked, school, learn, blooket, blooket hack, blooket cheat, chatgpt unblocked, chatgpt, chatgpt free, chatgpt no signup, school chatgpt, free games, free movies, movies online, osu, osu unblocked, minecraft, free minecraft, eaglecrafter, minecraft 1.5, discord, discord unblocked, youtube, youtube unblocked, netflix, netflix online, tiktok, tiktok unblocked, edpuzzle, edpuzzle cheat, edpuzzle hack, autoclicker, bookmark, bookmarklet" />
+    <script>
+  // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyB2q6f49pzNwuRpuuHwbouLXP_sRksH3wg",
+  authDomain: "mugi-test-1718d.firebaseapp.com",
+  databaseURL: "https://mugi-test-1718d-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "mugi-test-1718d",
+  storageBucket: "mugi-test-1718d.appspot.com",
+  messagingSenderId: "533920014849",
+  appId: "1:533920014849:web:a5b9eb7dacc566dc79d600",
+  measurementId: "G-EKNPGEND7B"
+};
+
+firebase.initializeApp(firebaseConfig);
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    const uid = user.uid;
+    const accessCodesRef = firebase.database().ref('accessCodes/' + uid);
+
+    // Check if the user has a valid access code
+    accessCodesRef.once('value')
+      .then(function(snapshot) {
+        const accessCodes = snapshot.val();
+
+        if (accessCodes) {
+          // User has a valid access code, display welcome message
+          const userGreeting = document.getElementById('userGreeting');
+          userGreeting.textContent = `Welcome, ${user.displayName}!`;
+        } else {
+          // User does not have a valid access code, redirect to login page
+          if (window.location.pathname !== '/login.html') {
+            window.location.href = "/login.html";
+          }
+        }
+      })
+      .catch(function(error) {
+        // Handle errors here
+        console.log(error);
+      });
+  } else {
+    // User is not signed in, redirect to login page
+    if (window.location.pathname !== '/login.html') {
+      window.location.href = "/login.html";
+    }
+  }
+});
+  </script>
+
 </head>
 
 <!-- Google tag (gtag.js) -->
