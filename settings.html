@@ -69,18 +69,25 @@
     <br>
     <br><br>
     <btn class="recent" onclick="drive();cloak();">be Google Drive</btn>
+     <br>
+    <br><br>
+    <btn class="recent" onclick="classos();cloak();">be Classos</btn>
     <script>
       const drive = () => localStorage.cloaker = JSON.stringify({
         "title": "My Drive - Google Drive",
         "icon": "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
       });
       const classroom = () => localStorage.cloaker = JSON.stringify({
-        "title": "Classroom",
+        "title": "כיתות",
         "icon": "https://ssl.gstatic.com/classroom/favicon.png"
       });
       const google = () => localStorage.cloaker = JSON.stringify({
         "title": "Google",
         "icon": "https://www.google.com/favicon.ico"
+      });
+            const classos = () => localStorage.cloaker = JSON.stringify({
+        "title": "classos",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAMAAAC93eDPAAAAY1BMVEUAmdn///8Al9gAldgAk9cAkNb6/f70+v3H4fO33fJYr+DJ5vUAjdWUyuo8qN7d7/mY0e3S6vfp9fuj0+7i8/p/wuguodyLyOpntuNMqt+u0+6s1/BvuuUVnttCo9xQpt2/2/FgDxh+AAAFGElEQVR4nO1a3cKaMAwtaQEBBUFFHB9u7/+UgyRVFFBcW7wY50o/Nzjk9yRFiBUrVqxYsWLFihX/GaDDdwk019+/r0J+jYVK62PgeWF++pIlQO08jbz8Cgd58O7Iv2EHefL62H+BAmQPFMLlXaGNEOZMZaeWpuAneOMsBXGmaFiaATQB2uAqBWyP+PGysCcgxkevfXHzyY9clgLftupuCxe0yG5pClgUirQzPjToichfmEKEFBr0v49JkSxMATaYBUwBvxTbb1BI6ItCrwTLUZCqhXygsMfYXIgCqKb69efPLo16FCQVp2ViQaUb7gnFlyioKnzoTbnAcOQisQQFSB8ZeBllxIJWkPkjA68oF6YAlTdOQS1GQSu1Oo4jppAShSWSEmQLID8cFEhFHLhBqxq/uKQgt+l5vz812AqCzvhQEoWYCnTkmgJUpM0C7Mk5NkeBzTFgCqigjs4oAERBPwQjlAXkFE0Bv+SuKIBIHrNgTxSoSlYUC26btayfEpHEEekFFmsSKbiSLPJHl4BgkgIHhjMKrNXj8pKMUDghBRJutfVBoi0FSsqSukLV1oKmGMZCn8LBMgVQZXXenasT2r/o7uTvhxRwhAIiZ5kCXOvwXgq8HO9ELaLuU9jjD2Vx95A1BvGTLsA7XaguwBIUnhl4Obr8in9NhlYgGWGXwuPc3tbeboEB1+JG5zEWrtanqaflRYuwgZu9M1Ip/aS0P9Aplqj5+UfvcsoBBUoPRzMlCIqEeiuln1IxqJACpn9G/wjTg2fKOKCkBFtbSNYCR5SmXKC7J+QKxBSg41ZTdhCFyC/jqro0FpaQTCHCSgOkU36p20cKx9b6SRaJPoUi7/pIWBwaYw7siPqZghAoCxK+QWtxfl6mcM+fi2lUAPdeonC986G+vR9c/5mChZ0Pzerkc0lVGa1An9PB5QcUvKMw5ECTCS0SaW7nhGslXFgPVQEnZR9nQ1fwJbHscAkigSb8shlph+ysNiAPhyObwbRrKrwQakGiEIp7DI5QYCWRC6V81nmmu1jemnT3JafsXz8U9xRsGJRBVDYNwPHVeQLEOTu+W3H7PTlNkxV50YQCPQpVAOn77xzLfQ1zhQ8pjDfSnAfD/BsHxyMGjIqsWEHX6NmaGDrr4zQFDc2+sXGRVnihYrYZoM6jstc1PfOGyXuT82wzKKV64yWrOyNASc3v06BSLLhsbOX96F8uxSL71k2NwEND8pEZJNelwMrpCIjso7zE/0Piss1IO3OV3H2Wl7eCpocdc0BKATlbhWm7tULD1iGV7M3OcxhwTbJ5YMl6aW5w681saCwc7yCZPjO6AXgBEsQ2J0tuu7N6ntJjl6lOeIQOyBnlnpfQbSmzvG/ys7sSeQmp9+PWz61ZiUTvbHsrSba3TZ0nilmNd5vokmT/1FrOUkB6HXFUDs7N+Ww8f1khtRsKJyf3IPDq4ctexblrrhbHwQvoV2OEPjLbODq3Z08ULy7PRghcvcoCkor0tB5mXznIRw1+xukbAC2Cgk+kzWdg/ZZNUuDmsHH3Oo+28+RD0hDu9D2WN9UJBL/Y4/Btnjd9AlJylMs3aTjtwwk9yFm7cXpWDC/HVKbg9mUerZ3GTc3jU+6UAsuRiWDQseD03TIecI/j3RIgeN/IjCkIfolu/GdaRFhWrQMOyat45Hca3qzkDMGHHxPFiXvEZxP4p4Aq6jCho0HgrweXDPiF72llau0oZsWKFStWrFixYsWKcfwF0ao0R7KQe/AAAAAASUVORK5CYII="
       });
     </script>
   </div>
