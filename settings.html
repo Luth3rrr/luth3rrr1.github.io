@@ -53,7 +53,7 @@
   
   <script src="/js/navbar.js"></script>
   
-  <!--start editable-->
+    <!--start editable-->
   <br>
   <br>
   <br>
@@ -62,36 +62,53 @@
   <br>
   <br>
   <div class="text-center">
-    <btn class="recent" onclick="google();cloak();">be Google</btn>
+    <button class="recent" onclick="google();cloak();">be Google</button>
     <br>
     <br><br>
-    <btn class="recent" onclick="classroom();cloak();">be Google Classroom</btn>
+    <button class="recent" onclick="classroom();cloak();">be Google Classroom</button>
     <br>
     <br><br>
-    <btn class="recent" onclick="drive();cloak();">be Google Drive</btn>
+    <button class="recent" onclick="drive();cloak();">be Google Drive</button>
      <br>
     <br><br>
-    <btn class="recent" onclick="classos();cloak();">be Classos</btn>
+    <button class="recent" onclick="classos();cloak();">be Classos</button>
     <script>
-      const drive = () => localStorage.cloaker = JSON.stringify({
-        "title": "My Drive - Google Drive",
-        "icon": "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
-      });
-      const classroom = () => localStorage.cloaker = JSON.stringify({
-        "title": "כיתות",
-        "icon": "https://ssl.gstatic.com/classroom/favicon.png"
-      });
-      const google = () => localStorage.cloaker = JSON.stringify({
-        "title": "Google",
-        "icon": "https://www.google.com/favicon.ico"
-      });
-            const classos = () => localStorage.cloaker = JSON.stringify({
-        "title": "classos",
-        "icon": "https://st.classoos.com/3.70.0.78/img/favicons/apple-touch-icon-114x114.png"
-      });
+      const drive = () => {
+        localStorage.setItem('cloaker', JSON.stringify({
+          "title": "My Drive - Google Drive",
+          "icon": "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
+        }));
+      };
+      const classroom = () => {
+        localStorage.setItem('cloaker', JSON.stringify({
+          "title": "כיתות",
+          "icon": "https://ssl.gstatic.com/classroom/favicon.png"
+        }));
+      };
+      const google = () => {
+        localStorage.setItem('cloaker', JSON.stringify({
+          "title": "Google",
+          "icon": "https://www.google.com/favicon.ico"
+        }));
+      };
+      const classos = () => {
+        localStorage.setItem('cloaker', JSON.stringify({
+          "title": "classos",
+          "icon": "https://st.classoos.com/3.70.0.78/img/favicons/apple-touch-icon-114x114.png"
+        }));
+      };
+      const cloak = () => {
+        document.title = JSON.parse(localStorage.getItem('cloaker')).title;
+        const links = document.getElementsByTagName('link');
+        for (let i = 0; i < links.length; i++) {
+          const link = links[i];
+          if (link.rel === 'icon') {
+            link.href = JSON.parse(localStorage.getItem('cloaker')).icon;
+          }
+        }
+      };
     </script>
   </div>
-  <!--END EDITABLE HTML-->
   
   <script src="/js/theme.js"></script>
   <script src="/js/blanker.js"></script>
