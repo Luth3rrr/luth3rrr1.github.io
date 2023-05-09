@@ -77,6 +77,12 @@
   <br><br>
   <btn class="recent" onclick="clearIcon();">לא עובד לכם השינוי אייקון? לחצו פה</btn>
   </div>
+     <div class="idk" id="emergency">
+      <h1>Emergency Key</h1>
+      <h3 id="ck" style="display: none;">click any key to set...</h3>
+      <br>
+      <button id="lol" class="cloakbtn">Set</button>
+    </div>
   <script>
     const drive = () => {
       localStorage.setItem('cloaker', JSON.stringify({
@@ -111,6 +117,16 @@
       } else {
         alert('No cloaker data found!');
       }
+    };
+    document.querySelector('#lol').onclick = (ev) => {
+      document.querySelector('#ck').style.display = 'block';
+      document.querySelector('#lol').remove();
+      
+      document.body.onkeydown = (key) => {
+        document.body.onkeydown = null;
+        localStorage.setItem('key', key.keyCode);
+        document.querySelector('#ck').innerHTML = 'key set!';
+      };
     };
   </script>
 </div>
