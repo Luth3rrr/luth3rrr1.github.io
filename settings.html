@@ -76,13 +76,6 @@
   <br>
   <br><br>
   <btn class="recent" onclick="clearIcon();">לא עובד לכם השינוי אייקון? לחצו פה</btn>
-  </div>
-     <div class="idk" id="emergency">
-      <h1>Emergency Key</h1>
-      <h3 id="ck" style="display: none;">click any key to set...</h3>
-      <br>
-      <button id="lol" class="cloakbtn">Set</button>
-    </div>
   <script>
     const drive = () => {
       localStorage.setItem('cloaker', JSON.stringify({
@@ -118,40 +111,6 @@
         alert('No cloaker data found!');
       }
     };
-    document.querySelector('#lol').onclick = (ev) => {
-      document.querySelector('#ck').style.display = 'block';
-      document.querySelector('#lol').remove();
-      
-      document.body.onkeydown = (key) => {
-        document.body.onkeydown = null;
-        localStorage.setItem('key', key.keyCode);
-        document.querySelector('#ck').innerHTML = 'key set!';
-      };
-    };
-    setTimeout(() => {
-  $(function emkey() {
-    try {
-      document.removeEventListener('keydown');
-    } catch {};
-
-    document.addEventListener("keydown", function(event) {
-      if (event.keyCode !== 77 && event.keyCode !== 89) {
-        if (event.keyCode == localStorage.getItem('key')) {
-          event.preventDefault();
-          if (window.self !== window.top) window.top.location.href = 'https://classroom.google.com/h';
-          else window.location.href = 'https://classroom.google.com/h';
-        };
-
-        return;
-      };
-
-      if (event.ctrlKey || event.metaKey) {
-        event.preventDefault();
-        if (window.self !== window.top) window.top.location.href = 'https://classroom.google.com/h';
-        else window.location.href = 'https://classroom.google.com/h';
-      };
-    });
-  });
   </script>
 </div>
 
