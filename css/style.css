@@ -404,3 +404,6 @@ input:focus {
 .cloak{
   float: left;
 }
+emergency{
+float: right;
+}
