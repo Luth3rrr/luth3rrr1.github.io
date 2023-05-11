@@ -1,7 +1,4 @@
-window.addEventListener("load", function () {
-    const loader = document.querySelector(".loader");
-    loader.className += " hidden"; // class "loader hidden"
-});
+
 const DEFAULT_URL = "https://classroom.google.com/u/0/";
 
 const goBtn = document.querySelector('.teacher');
